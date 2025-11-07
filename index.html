@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Classic Game Boy SVG</title>
+  <meta name="description" content="Scalable SVG illustration of the classic Nintendo Game Boy (DMG-01)." />
+  <style>
+    :root {
+      --bg: #0f1115;
+      --text: #e6e6e6;
+    }
+    html, body {
+      height: 100%;
+    }
+    body {
+      margin: 0;
+      background: radial-gradient(1200px 800px at 70% 20%, #151826, var(--bg));
+      color: var(--text);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      display: grid;
+      place-items: center;
+    }
+    .wrap {
+      padding: 24px;
+      max-width: 1100px;
+      width: 100%;
+      box-sizing: border-box;
+      text-align: center;
+    }
+    h1 {
+      font-size: clamp(18px, 3vw, 26px);
+      letter-spacing: 0.3px;
+      margin: 0 0 16px;
+      opacity: 0.9;
+    }
+    p {
+      margin: 0 0 20px;
+      opacity: 0.7;
+      font-size: clamp(13px, 2vw, 15px);
+    }
+    .frame {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 14px;
+      padding: clamp(12px, 3vw, 24px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.03);
+    }
+    svg {
+      width: min(90vw, 420px);
+      height: auto;
+      display: block;
+      margin-inline: auto;
+    }
+    .caption { margin-top: 12px; opacity: 0.6; font-size: 12px; }
+  </style>
+</head>
+<body>
+  <main class="wrap" role="main">
+    <h1>Classic Game Boy (SVG)</h1>
+    <p>Responsive, crisp vector illustration ? scales to any size.</p>
+
+    <div class="frame">
+      <svg viewBox="0 0 400 700" role="img" aria-labelledby="title desc" xmlns="http://www.w3.org/2000/svg">
+        <title id="title">Classic Nintendo Game Boy (DMG-01)</title>
+        <desc id="desc">A stylized vector of the original Game Boy with a gray body, green screen, dark bezel, D-pad, magenta A and B buttons, start and select, and speaker grills.</desc>
+
+        <defs>
+          <linearGradient id="bodyShine" x1="0" x2="1" y1="0" y2="1">
+            <stop offset="0" stop-color="#f0f0f3" stop-opacity="0.9" />
+            <stop offset="0.5" stop-color="#e1e1e6" stop-opacity="0.95" />
+            <stop offset="1" stop-color="#cfcfd6" stop-opacity="1" />
+          </linearGradient>
+          <linearGradient id="bezelShade" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0" stop-color="#353847" />
+            <stop offset="1" stop-color="#222533" />
+          </linearGradient>
+          <radialGradient id="screenGlow" cx="50%" cy="45%" r="70%">
+            <stop offset="0" stop-color="#b7e36d" />
+            <stop offset="1" stop-color="#7eb33a" />
+          </radialGradient>
+          <filter id="innerShadow" x="-20%" y="-20%" width="140%" height="140%">
+            <feOffset dx="0" dy="1" />
+            <feGaussianBlur stdDeviation="2" result="blur" />
+            <feComposite in="SourceGraphic" in2="blur" operator="arithmetic" k2="-1" k3="1" />
+          </filter>
+        </defs>
+
+        <!-- Body -->
+        <rect x="25" y="15" width="350" height="670" rx="28" fill="url(#bodyShine)" stroke="#a9a9b0" stroke-width="2" />
+
+        <!-- Power LED -->
+        <circle cx="60" cy="65" r="6" fill="#9b1c31" stroke="#5b0f1d" stroke-width="1" />
+        <circle cx="60" cy="65" r="2" fill="#e86a7b" />
+
+        <!-- Screen Bezel -->
+        <rect x="55" y="80" width="290" height="220" rx="16" fill="url(#bezelShade)" />
+        <!-- Screws on bezel -->
+        <g fill="#121520">
+          <circle cx="70" cy="95" r="3" />
+          <circle cx="330" cy="95" r="3" />
+          <circle cx="70" cy="285" r="3" />
+          <circle cx="330" cy="285" r="3" />
+        </g>
+
+        <!-- Screen -->
+        <rect x="85" y="110" width="230" height="160" rx="8" fill="url(#screenGlow)" filter="url(#innerShadow)" />
+
+        <!-- Nintendo GAME BOY label (stylized bars) -->
+        <g fill="#6a6f8a" opacity="0.75">
+          <rect x="70" y="310" width="110" height="6" rx="3" />
+          <rect x="190" y="310" width="70" height="6" rx="3" />
+          <rect x="270" y="310" width="60" height="6" rx="3" />
+        </g>
+
+        <!-- D-Pad -->
+        <g transform="translate(85,395)">
+          <circle cx="45" cy="45" r="12" fill="#1a1a1a" />
+          <rect x="32" y="0" width="26" height="90" rx="6" fill="#262626" stroke="#131313" stroke-width="1.5" />
+          <rect x="0" y="32" width="90" height="26" rx="6" fill="#262626" stroke="#131313" stroke-width="1.5" />
+          <circle cx="45" cy="45" r="6" fill="#0f0f0f" />
+        </g>
+
+        <!-- A / B Buttons -->
+        <g transform="translate(245,405) rotate(-20 0 0)">
+          <circle cx="0" cy="0" r="20" fill="#b01b64" stroke="#6a0f3d" stroke-width="2" />
+          <circle cx="-45" cy="35" r="20" fill="#b01b64" stroke="#6a0f3d" stroke-width="2" />
+          <!-- highlights -->
+          <circle cx="-5" cy="-8" r="6" fill="#e77fb3" opacity="0.5" />
+          <circle cx="-50" cy="27" r="6" fill="#e77fb3" opacity="0.5" />
+        </g>
+
+        <!-- Start / Select -->
+        <g transform="translate(165,505) rotate(-10 0 0)" fill="#6a6f8a">
+          <rect x="0" y="0" width="60" height="12" rx="6" />
+          <rect x="75" y="6" width="60" height="12" rx="6" />
+        </g>
+
+        <!-- Speaker Grills -->
+        <g transform="translate(260,560) rotate(-18 0 0)" stroke="#6a6f8a" stroke-width="4" stroke-linecap="round">
+          <line x1="0" y1="0" x2="0" y2="55" />
+          <line x1="12" y1="0" x2="12" y2="55" />
+          <line x1="24" y1="0" x2="24" y2="55" />
+          <line x1="36" y1="0" x2="36" y2="55" />
+          <line x1="48" y1="0" x2="48" y2="55" />
+        </g>
+
+        <!-- Bottom Curve Accent -->
+        <path d="M55 635 Q200 660 345 635" fill="none" stroke="#b8b8c2" stroke-width="2" opacity="0.6" />
+
+        <!-- Bottom Screws -->
+        <g fill="#8a8f9e">
+          <circle cx="75" cy="650" r="4" />
+          <circle cx="325" cy="650" r="4" />
+        </g>
+      </svg>
+    </div>
+
+    <div class="caption">SVG only. No images. Pixel-perfect at any scale.</div>
+  </main>
+</body>
+</html>
